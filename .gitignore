@@ -2,3 +2,5 @@
 .DS_Store
 
 *.JuliaFormatter.toml
+
+out_*/
