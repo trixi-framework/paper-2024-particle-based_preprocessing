@@ -45,7 +45,6 @@ for (i, particle_spacing) in enumerate(particle_spacings)
                   background_pressure=background_pressure,
                   particle_spacing=particle_spacing,
                   save_intervals=false)
-    geometry_points = copy(geometry.vertices[1:(end - 1)])
 
     # Estimate packed density per particle
     positions_packed = copy(reinterpret(reshape, SVector{ndims(geometry), eltype(geometry)},
@@ -59,7 +58,6 @@ for (i, particle_spacing) in enumerate(particle_spacings)
                        ic_union.mass, positions_union;
                        smoothing_kernel, smoothing_length=smoothing_length_interpolation)
 
-
     trixi2vtk(shape_sampled, output_directory=output_directory, filename="sampled")
     trixi2vtk(boundary_sampled, output_directory=output_directory,
               filename="sampled_boundary")
@@ -70,7 +68,4 @@ for (i, particle_spacing) in enumerate(particle_spacings)
               signed_distance=boundary_system.signed_distances)
 
     trixi2vtk(signed_distance_field, output_directory=output_directory)
-
-    trixi2vtk(stack(geometry_points); output_directory=output_directory,
-              filename="points", density=density_surface)
 end
