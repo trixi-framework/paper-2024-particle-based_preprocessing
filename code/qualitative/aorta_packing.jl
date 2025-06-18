@@ -59,22 +59,6 @@ for (i, particle_spacing) in enumerate(particle_spacings)
                        ic_union.mass, positions_union;
                        smoothing_kernel, smoothing_length=smoothing_length_interpolation)
 
-    df = TrixiParticles.DataFrame(density=packed_ic.density)
-
-    TrixiParticles.CSV.write(joinpath(output_directory,
-                                      "density_estimation_per_particle.csv"), df)
-
-    # Estimate packed density at geometry surface
-    density_surface = zeros(length(geometry_points))
-
-    summation_density!(density_surface, geometry_points,
-                       ic_union.mass, positions_union;
-                       smoothing_kernel, smoothing_length=smoothing_length_interpolation)
-
-    df = TrixiParticles.DataFrame(density=density_surface)
-
-    TrixiParticles.CSV.write(joinpath(output_directory,
-                                      "density_estimation_at_surface.csv"), df)
 
     trixi2vtk(shape_sampled, output_directory=output_directory, filename="sampled")
     trixi2vtk(boundary_sampled, output_directory=output_directory,
