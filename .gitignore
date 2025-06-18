@@ -3,4 +3,4 @@
 
 *.JuliaFormatter.toml
 
-out_*/
+out*/
