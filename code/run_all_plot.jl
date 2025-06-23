@@ -1,0 +1,5 @@
+include(joinpath(@__DIR__, "plots", "example_potato.jl"))
+include(joinpath(@__DIR__, "plots", "performance", "plot_all.jl"))
+include(joinpath(@__DIR__, "plots", "qualitative", "plot_all.jl"))
+include(joinpath(@__DIR__, "plots", "quantitative", "plot_all.jl"))
+include(joinpath(@__DIR__, "plots", "signed_distances", "plot_all.jl"))
