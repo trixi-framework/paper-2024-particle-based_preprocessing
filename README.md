@@ -6,7 +6,15 @@
 This repository contains information and code to reproduce the results presented in the
 article
 ```bibtex
-TODO
+@misc{neher2025robustefficientpreprocessingtechniques,
+      title={Robust and efficient pre-processing techniques for particle-based methods including dynamic boundary generation},
+      author={Niklas S. Neher and Erik Faulhaber and Sven Berger and Christian Weißenfels and Gregor J. Gassner and Michael Schlottke-Lakemper},
+      year={2025},
+      eprint={2506.21206},
+      archivePrefix={arXiv},
+      primaryClass={math.NA},
+      url={https://arxiv.org/abs/2506.21206},
+}
 ```
 
 If you find these results useful, please cite the article mentioned above. If you
